@@ -1,0 +1,30 @@
+{
+  "_comment": "Example watchlist config. Replace the tickers with your own (cik = the company's SEC CIK number). No secrets here: keys come from .env.",
+  "timezone": "America/Chicago",
+  "tickers": {
+    "SPCX": {"role": "watchlist", "cik": 1181412, "name_terms": ["\"Space Exploration Technologies\"", "SpaceX"],
+             "min_date": "2026-06-12",
+             "min_date_reason": "Before Jun 12 2026 the SPCX symbol was the Tuttle SPAC ETF (now SPCK); SpaceX listed Jun 12 2026."},
+    "TSLA": {"role": "watchlist", "cik": 1318605, "name_terms": ["\"Tesla, Inc.\""], "min_date": null},
+    "PLTR": {"role": "watchlist", "cik": 1321655, "name_terms": ["\"Palantir Technologies\""], "min_date": null}
+  },
+  "prices": {"lookback_days": 60, "mismatch_pct": 0.5, "stale_days": 4},
+  "fred": {
+    "lookback_days": 45,
+    "series": {
+      "VIXCLS": {"label": "CBOE VIX (close)", "stale_days": 5},
+      "BAMLH0A0HYM2": {"label": "ICE BofA US High Yield OAS (%)", "stale_days": 5},
+      "BAMLC0A0CM": {"label": "ICE BofA US Corporate (IG) OAS (%)", "stale_days": 5},
+      "DGS10": {"label": "10-Year Treasury yield (%)", "stale_days": 5},
+      "DGS2": {"label": "2-Year Treasury yield (%)", "stale_days": 5},
+      "DFF": {"label": "Effective Fed Funds rate (%)", "stale_days": 5}
+    }
+  },
+  "sec": {"filings_lookback_days": 30, "forms": ["10-K", "10-Q", "8-K", "10-K/A", "10-Q/A", "8-K/A"],
+          "form4_lookback_days": 14, "form4_max_per_ticker": 8, "efts_lookback_days": 3, "efts_max_hits": 10,
+          "material_item": "8.01", "material_max_per_ticker": 5, "sleep_s": 0.25},
+  "finra": {"rows": 3, "stale_days": 35},
+  "earnings": {"verify_window_days": 3, "lookback_8k_days": 45, "deliveries_early_days": 10, "deliveries_new_days": 7},
+  "calendars": {"horizon_days": 14},
+  "firewall_canary": "example.com"
+}

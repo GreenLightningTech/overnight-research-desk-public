@@ -1,0 +1,7 @@
+# Earnings dates, entered by hand from each company's own investor-relations announcement or SEC 8-K.
+# The collector checks every "reported" row against SEC 8-K Item 2.02 earnings filings (production/deliveries
+# releases excluded) and flags rows it cannot confirm. Don't enter estimates; leave a ticker out until its date is announced.
+# Columns: ticker,date (YYYY-MM-DD),status (scheduled|reported),timing (bmo|amc|unknown),source_url,entered_by,entered_on
+# Example row (delete the leading "# "):
+# ABCD,2026-01-15,scheduled,amc,https://investors.example.com/earnings-date,analyst,2026-01-02
+ticker,date,status,timing,source_url,entered_by,entered_on

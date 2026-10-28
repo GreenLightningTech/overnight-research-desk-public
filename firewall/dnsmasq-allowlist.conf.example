@@ -1,0 +1,19 @@
+# Example dnsmasq config for a DNS allow-list (default deny). Use it as the only DNS server of the network the
+# collector runs in (e.g. a container network), and block outbound traffic to any other DNS server and to
+# raw IPs with your packet filter, so names outside the list cannot be resolved or reached.
+# Upstream resolver: pick one you trust; 192.0.2.53 is a documentation placeholder.
+no-resolv
+no-hosts
+log-queries
+# Anything not listed below: answer NXDOMAIN.
+address=/#/
+server=/query1.finance.yahoo.com/192.0.2.53
+server=/query2.finance.yahoo.com/192.0.2.53
+server=/api.tiingo.com/192.0.2.53
+server=/api.stlouisfed.org/192.0.2.53
+server=/sec.gov/192.0.2.53
+server=/api.finra.org/192.0.2.53
+server=/ews.fip.finra.org/192.0.2.53
+server=/www.bls.gov/192.0.2.53
+server=/www.bea.gov/192.0.2.53
+server=/www.federalreserve.gov/192.0.2.53

@@ -1,0 +1,12 @@
+# Hosts the collector may reach (US sources only). Same list as ALLOWED_HOST_SUFFIXES in collector/desk/net.py.
+# A suffix also allows its subdomains (sec.gov covers www.sec.gov and efts.sec.gov).
+query1.finance.yahoo.com
+query2.finance.yahoo.com
+api.tiingo.com
+api.stlouisfed.org
+sec.gov
+api.finra.org
+ews.fip.finra.org
+www.bls.gov
+www.bea.gov
+www.federalreserve.gov
